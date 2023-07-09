@@ -1,1 +1,1 @@
-# rsschool-cv
+https://snak3gms.github.io/rsschool-cv/
