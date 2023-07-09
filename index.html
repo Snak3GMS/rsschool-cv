@@ -3,8 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icons/CV.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>CV</title>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Vladimir Shkarubov</h1>
+        </header>
+        <hr>
+        <main class='first'>
+            <nav class='first_sidebar'>
+                My Contacts
+                <ul>
+                    <li><img src="icons/vk.svg" alt="" class="first_link_ico"><a href="https://vk.com/shkarubovvova">VK</a></li>
+                    <li><img src="icons/twitter.svg" alt="" class="first_link_ico"><a href="https://twitter.com/Shkarubiks">Twitter</a></li>
+                    <li><img src="icons/gmail.svg" alt="" class="first_link_ico"><a href="mailto:vova.shkar74@gmail.com">Gmail</a></li>
+                </ul>
+            </nav>
+            <article>
+                <p><img src="img/myphoto.jpg" alt="me">
+                Since 2018 I have been interested in <mark>web development</mark>, I want to become a good front-end developer. Very easy to learn, understanding 95% of the material from the 1st try. I have always liked the topic of IT, so I love to study it.
+                </p>
+                <h2>Skills:</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>SASS/SCSS/LESS</li>
+                    <li>JS/ES5,ES6</li>
+                    <li>Algorithms</li>
+                </ul>
+            </article>
+        </main>
+        
+        <section class="code">
+            <h2>Sample code from the latest <a href="https://snak3gms.github.io/">TODOLIST</a> project:</h2>
+            <figure>
+                <figcaption>// Item delete function</figcaption>
+                <pre>
+                    <code>
+    function deleteElement() {
+        if (list.innerHTML == '') {
+                list.innerHTML = &lt;div class="listnull"&gt;Список пуст...&lt;/div>;
+            }
+            document.querySelectorAll('.item-delete').forEach((btn, i) => {
+                btn.addEventListener('click', () => {
+                toDoList.splice(i, 1);
+                getDoList();
+                });
+            }); 
+        }
+                    </code>
+                </pre> 
+            </figure>
+            <figure>
+                <figcaption>// Forming a list of tasks on the page from the created array of objects</figcaption>
+                <pre>
+                    <code>
+    function getDoList() {
+        list.innerHTML='';
+        toDoList.forEach((element) => {
+            const elementList = document.createElement('div');
+            elementList.classList.add('list__item');
+            elementList.innerHTML = `&lt;div class="wrapper">&lt;div class="item-title">${element.name}&lt;/div>&lt;a class="item-delete">&lt;div>&lt;/div>&lt;div>&lt;/div>&lt;/a>&lt;/div>`;
+            if (element.descr.length > 0) { 
+                elementList.innerHTML += `&lt;div class="descr_todo">${element.descr}&lt;/div>`
+            }
+            list.append(elementList);
+        });
+        deleteElement();    
+        localStorage.setItem('1', JSON.stringify(toDoList));
+    }
+                    </code>
+                </pre> 
+            </figure>
+        </section>
+        <section class='about_me'>
+            <h2>About me</h2>
+            <p><span>Passed courses</span> on JS and on creating web pages</p>
+
+            <p><span>Secondary vocational education</span>, online courses by Ivan Petrichenko, self-education from the books: "You don't know JS" and "learnJavaScript"</p>
+
+            <p>I can read the documentation with a dictionary. <span>English level A2</span>(pre-intermediate)</p>
+        </section>
+    </div>
+    <footer class="footer">
+        <a href="https://github.com/Snak3GMS">GitHub</a><br>
+        <a href="https://rs.school/js/" target="_blank"><img src="https://rs.school/images/rs_school_js.svg" alt="rs_school_logo" width="100px"></a>
+    </footer>
 </body>
 </html>
